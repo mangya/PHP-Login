@@ -11,14 +11,15 @@ A simple, secure login and signup system with PHP, MySQL and jQuery (AJAX) using
 
 ### Creating the MySQL Database
 
-Create database "login" and create tables "members" and "loginAttempts" :
+Create database "login" and create tables "users" and "loginAttempts" :
 
 ```sql
-CREATE TABLE `members` (
+CREATE TABLE `users` (
   `id` char(23) NOT NULL,
   `username` varchar(65) NOT NULL DEFAULT '',
   `password` varchar(65) NOT NULL DEFAULT '',
   `email` varchar(65) NOT NULL,
+  `role` varchar(25) NOT NULL DEFAULT 'Registered User',
   `verified` tinyint(1) NOT NULL DEFAULT '0',
   `mod_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
