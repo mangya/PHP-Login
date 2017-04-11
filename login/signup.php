@@ -8,33 +8,79 @@
 
 
 ?>
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Signup</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="../css/main.css" rel="stylesheet" media="screen">
+  <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <title>Admin</title>
   </head>
 
   <body>
     <div class="container">
+      <div class="row">
+        <div class="panel-heading">
+           <div class="panel-title text-center">
+              <h1 class="title">Create New Account</h1>
+              <hr />
+            </div>
+        </div> 
+        <div class="main-login main-center">
 
-      <form class="form-signup" id="usersignup" name="usersignup" method="post" action="createuser.php">
-        <h2 class="form-signup-heading">Register</h2>
-        <input name="newuser" id="newuser" type="text" class="form-control" placeholder="Username" autofocus>
-        <input name="email" id="email" type="text" class="form-control" placeholder="Email">
-<br>
-        <input name="password1" id="password1" type="password" class="form-control" placeholder="Password">
-        <input name="password2" id="password2" type="password" class="form-control" placeholder="Repeat Password">
-
-        <button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-
-        <div id="message"></div>
-      </form>
-
+          <form class="form-horizontal" id="usersignup" name="usersignup" method="post" action="createuser.php">
+            <div class="form-group">
+              <label for="username" class="cols-sm-2 control-label">Username</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="newuser" id="newuser"  placeholder="Enter your Username"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Email</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                  <input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="password1" id="password1"  placeholder="Enter your Password"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Confirm Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="password2" id="password2"  placeholder="Confirm your Password"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group ">
+              <button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block login-button" type="submit">Sign up</button>
+            </div>
+            <div id="message"></div>
+          </form>
+        </div>
+      </div>
     </div> <!-- /container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

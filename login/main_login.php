@@ -6,33 +6,64 @@ if (isset($_SESSION['username'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="../css/main.css" rel="stylesheet" media="screen">
-  </head>
+  <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <title>Admin</title>
+  </head>
   <body>
     <div class="container">
+      <div class="row main">
+        <div class="panel-heading">
+           <div class="panel-title text-center">
+              <h1 class="title">Company Name</h1>
+              <hr />
+            </div>
+        </div> 
+        <div class="main-login main-center">
+          <form class="form-horizontal" method="post" action="#">
+            <div class="form-group">
+              <label for="username" class="cols-sm-2 control-label">Username</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="myusername" id="myusername"  placeholder="Enter your Username"/>
+                </div>
+              </div>
+            </div>
 
-      <form class="form-signin" name="form1" method="post" action="checklogin.php">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input name="myusername" id="myusername" type="text" class="form-control" placeholder="Username" autofocus>
-        <input name="mypassword" id="mypassword" type="password" class="form-control" placeholder="Password">
-        <!-- The checkbox remember me is not implemented yet...
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        -->
-        <button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="mypassword" id="mypassword"  placeholder="Enter your Password"/>
+                </div>
+              </div>
+            </div>
 
-        <div id="message"></div>
-      </form>
-
-    </div> <!-- /container -->
+            <div class="form-group ">
+              <button id="submit" class="btn btn-primary btn-lg btn-block login-button">Sign in</button>
+            </div>
+            <div class="login-register">
+                <a href="signup.php">Create account</a> or <a href="reset_password.php">forgot password</a>
+            </div>
+            <div id="message"></div>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.2.4.min.js"></script>
@@ -40,6 +71,5 @@ if (isset($_SESSION['username'])) {
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <!-- The AJAX login script -->
     <script src="js/login.js"></script>
-
   </body>
 </html>
